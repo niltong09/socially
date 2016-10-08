@@ -13,6 +13,7 @@ import { name as PartyCreator } from '../partyCreator/partyCreator';
 import { name as PartyRsvp } from '../partyRsvp/partyRsvp';
 import { name as PartyRsvpsList } from '../partyRsvpsList/partyRsvpsList';
 import { name as PartyUnanswered } from '../partyUnanswered/partyUnanswered';
+import { name as PartiesMap } from '../partiesMap/partiesMap';
 import utilsPagination from 'angular-utils-pagination';
 import { Counts } from 'meteor/tmeasday:publish-counts';
 
@@ -86,7 +87,8 @@ export default angular.module(name, [
   PartyRsvp,
   PartyRsvpsList,
   PartyUnanswered,
-  PartyCreator
+  PartyCreator,
+  PartiesMap
 ]).component(name, {
   template,
   controllerAs: name,

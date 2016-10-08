@@ -9,6 +9,7 @@ import { Meteor } from 'meteor/meteor';
 
 import { Parties } from '../../../api/parties/index';
 import { name as PartyUninvited } from '../partyUninvited/partyUninvited';
+import { name as PartyMap } from '../partyMap/partyMap';
 
 import template from './partyDetails.html';
 
@@ -45,7 +46,8 @@ class PartyDetails {
         $set: {
           name: this.party.name,
           description: this.party.description,
-          public: this.party.public
+          public: this.party.public,
+          location: this.party.location
         }
       }, (error) => {
         if (error) {
@@ -72,7 +74,8 @@ const name = 'partyDetails';
 export default angular.module(name, [
   angularMeteor,
   PartyUninvited,
-  uiRouter
+  uiRouter,
+  PartyMap
 ]).component(name, {
   template,
   controllerAs: name,

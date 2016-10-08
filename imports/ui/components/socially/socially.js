@@ -29,12 +29,15 @@ export default angular.module(name, [
 }).config(config)
     .run(run);
 
-function config($locationProvider, $urlRouterProvider) {
+function config($locationProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider) {
     'ngInject';
 
     $locationProvider.html5Mode(true);
 
     $urlRouterProvider.otherwise('/parties');
+    uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyAwyVX6Vwb8tkPWQaoTQvAgk4jvFROT-yE'
+    });
 }
 
 function run($rootScope, $state) {
