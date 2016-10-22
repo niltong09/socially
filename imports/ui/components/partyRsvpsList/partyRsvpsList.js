@@ -4,8 +4,6 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
-import { name as PartyRsvpUsers } from '../partyRsvpUsers/partyRsvpUsers';
-
 import template from './partyRsvpsList.html';
 
 class PartyRsvpsList {
@@ -15,8 +13,7 @@ const name = 'partyRsvpsList';
 
 // create module
 export default angular.module(name, [
-  angularMeteor,
-  PartyRsvpUsers
+  angularMeteor
 ]).component(name, {
   template,
   controllerAs: name,

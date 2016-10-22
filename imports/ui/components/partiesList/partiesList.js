@@ -12,13 +12,13 @@ import { name as PartiesSort } from '../partiesSort/partiesSort';
 import { name as PartyCreator } from '../partyCreator/partyCreator';
 import { name as PartyRsvp } from '../partyRsvp/partyRsvp';
 import { name as PartyRsvpsList } from '../partyRsvpsList/partyRsvpsList';
-import { name as PartyUnanswered } from '../partyUnanswered/partyUnanswered';
 import { name as PartiesMap } from '../partiesMap/partiesMap';
 import utilsPagination from 'angular-utils-pagination';
 import { Counts } from 'meteor/tmeasday:publish-counts';
 
 
 import template from './partiesList.html';
+import paginationTemplate from '../../utils/paginate-dir.ng.html';
 
 class PartiesList {
   constructor($scope, $reactive) {
@@ -86,7 +86,6 @@ export default angular.module(name, [
   PartiesSort,
   PartyRsvp,
   PartyRsvpsList,
-  PartyUnanswered,
   PartyCreator,
   PartiesMap
 ]).component(name, {
@@ -95,7 +94,7 @@ export default angular.module(name, [
   controller: PartiesList
 }).config(config);
 
-function config($stateProvider) {
+function config($stateProvider, paginationTemplateProvider) {
   'ngInject';
 
   $stateProvider
@@ -103,4 +102,5 @@ function config($stateProvider) {
       url: '/parties',
       template: '<parties-list></parties-list>'
     });
+  paginationTemplateProvider.setString(paginationTemplate);
 }
